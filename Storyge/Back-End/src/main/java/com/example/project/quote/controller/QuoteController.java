@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin
@@ -21,7 +19,7 @@ public class QuoteController {
     @GetMapping("/quote")
     public ResponseEntity<QuoteDto> selectOneQuote(){
 //        LocalDate localDate= LocalDate.now();
-//        long day = localDate.getDayOfYear();
+//        long quoteId = localDate.getDayOfYear();
         long quoteId = 1; //db에 넣고 결정할 것
         
         QuoteDto quoteDto = quoteService.selectOneQuote(quoteId).orElseThrow();
