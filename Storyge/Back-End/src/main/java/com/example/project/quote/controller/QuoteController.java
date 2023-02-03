@@ -18,7 +18,8 @@ public class QuoteController {
     //글귀 1개 가져오기
     @GetMapping("/quote")
     public ResponseEntity<QuoteDto> selectOneQuote(){
-        
+//        LocalDate localDate= LocalDate.now();
+//        long quoteId = localDate.getDayOfYear();
         long quoteId = 1; //db에 넣고 결정할 것
         
         QuoteDto quoteDto = quoteService.selectOneQuote(quoteId).orElseThrow();
