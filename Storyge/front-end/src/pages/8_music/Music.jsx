@@ -8,7 +8,7 @@ import { OpenAI } from "../../openai/OpenAI";
 
 export default function Music() {
   const movePage = useNavigate();
-  const [result, setResult] = useState("분석전");
+  const [result, setResult] = useState("");
 
   function getMusic() {}
 
@@ -20,8 +20,12 @@ export default function Music() {
       <S.Rectangle placeholder="음악 추천을 받고 싶은 사연을 작성해주세요." />
       <G.longBtnDefault
         onClick={async () => {
-          setResult(await OpenAI({ input: "기분이 너무 꿀꿀해요", type: 0 }));
-          console.log("분석한 데이터 result -> " + result);
+          setResult(
+            await OpenAI({
+              input: "나는 오늘 피곤하다. 또 월요일이다.",
+              type: 0,
+            })
+          );
         }}
         style={{ marginBottom: "20px" }}
       >
