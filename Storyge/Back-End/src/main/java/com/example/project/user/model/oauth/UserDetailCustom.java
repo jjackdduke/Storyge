@@ -31,18 +31,13 @@ public class UserDetailCustom implements OAuth2User {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        System.out.println("UserDetailCustom 의 getAttributes");
-        System.out.println("========================================================================");
         Collection<GrantedAuthority> collection = new ArrayList<>();
-        collection.add(user::getEmail);
+        collection.add(user::getRole);
         return collection;
     }
 
     @Override
     public String getName() {
-        System.out.println("UserDetailCustom의 getName");
-        System.out.println("========================================================================");
-
         return user.getNickname();
     }
 }
