@@ -5,7 +5,6 @@ export const OpenAI = async ({ input, type }) => {
 
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-    // apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
 
@@ -90,10 +89,10 @@ export const OpenAI = async ({ input, type }) => {
     let e = d[0].trim();
 
     // result return
-    const comment = b.split(": ")[1];
     const emotion = e.toLowerCase();
+    const comment = b.split(": ")[1];
 
-    return [comment, emotion];
+    return [emotion, comment];
   } else {
     const comment_kr = result;
     return comment_kr;
