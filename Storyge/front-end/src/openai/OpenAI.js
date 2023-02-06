@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import { useState } from "react";
 
 export const OpenAI = async ({ input, type }) => {
   let result = "";
@@ -7,7 +8,6 @@ export const OpenAI = async ({ input, type }) => {
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
-
   const arrayItems = [
     {
       name: "Music recommend",
